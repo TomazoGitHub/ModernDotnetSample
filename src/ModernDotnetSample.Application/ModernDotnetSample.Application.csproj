@@ -4,6 +4,18 @@
     <ProjectReference Include="..\ModernDotnetSample.Domain\ModernDotnetSample.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Folder Include="Abstractions\" />
+	<Folder Include="DependencyInjection\" />
+	<Folder Include="Features\Orders\DTOs\" />
+	<Folder Include="Features\Orders\Validators\" />
+	<Folder Include="Features\Orders\Queries\" />
+  </ItemGroup>
+  
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
