@@ -17,6 +17,7 @@ public class Order : AggregateRoot
     public Guid CustomerId { get; private set; }
 
     public OrderStatus Status { get; private set; }
+    public DateTime CreatedAt { get; private set; }
 
     public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
 
@@ -26,6 +27,7 @@ public class Order : AggregateRoot
     {
         CustomerId = customerId;
         Status = OrderStatus.Created;
+        CreatedAt = DateTime.UtcNow;
 
         AddDomainEvent(new OrderCreatedEvent(Id));
     }

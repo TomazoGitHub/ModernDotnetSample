@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernDotnetSample.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModernDotnetSample.Domain.Entities;
 
-public class OrderItem
+public class OrderItem : Entity
 {
     public Guid ProductId { get; private set; }
 

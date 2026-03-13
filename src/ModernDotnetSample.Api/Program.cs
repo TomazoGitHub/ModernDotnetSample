@@ -1,6 +1,7 @@
 using ModernDotnetSample.Application;
 using ModernDotnetSample.Domain.Entities;
 using ModernDotnetSample.Domain.Interfaces;
+using ModernDotnetSample.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,12 @@ builder.Services.AddEndpointsApiExplorer();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 //builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IOrderRepository, FakeOrderRepository>();
-builder.Services.AddApplication();
+//builder.Services.AddScoped<IOrderRepository, FakeOrderRepository>();
 
+builder.Services.AddPersistence(builder.Configuration);
+
+
+builder.Services.AddApplication();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
